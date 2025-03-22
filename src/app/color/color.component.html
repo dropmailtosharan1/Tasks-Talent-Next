@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>
+    Enter the color name or hex code to display the color of background color of
+    below box
+  </h2>
+  <input
+    type="text"
+    [(ngModel)]="color"
+    placeholder="Enter a color name or hex code"
+    class="input-box"
+  />
+  <div class="color-box" [ngStyle]="{ 'background-color': color }">
+    <p *ngIf="color">Color: {{ color }}</p>
+    <p *ngIf="!color">Enter a color above</p>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>Countries will display Ascending 🔁 Descending</h3>
+  <input
+    type="text"
+    [(ngModel)]="newCountry"
+    placeholder="Enter a country"
+    class="input-box"
+  />
+  <button (click)="addCountry()" class="btn">Add Country</button>
+
+  <div>
+    <label for="sortOrder">Sort Order:</label>
+    <select [(ngModel)]="sortOrder" id="sortOrder">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+
+  <ul>
+    <li *ngFor="let country of countries | sort : sortOrder">
+      {{ country }}
+    </li>
+  </ul>
+</div>

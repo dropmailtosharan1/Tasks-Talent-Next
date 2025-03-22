@@ -1,0 +1,14 @@
+.star-rating {
+  font-size: 30px;
+  color: gray;
+  cursor: pointer;
+}
+
+.star-rating span {
+  transition: color 0.3s;
+}
+
+.star-rating span:hover,
+.star-rating span.hovered {
+  color: gold;
+}

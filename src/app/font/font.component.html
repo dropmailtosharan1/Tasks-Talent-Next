@@ -1,0 +1,8 @@
+<div class="container">
+<button (click)="increaseFontSize()" class="btn">Increase Font Size</button>
+<button (click)="decreaseFontSize()" class="btn">Decrease Font Size</button>
+
+<p [ngStyle]="{ 'font-size.px': fontSize }">
+  This is a sample paragraph. Use the buttons to change its font size!
+</p>
+</div>

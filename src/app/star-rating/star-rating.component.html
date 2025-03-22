@@ -1,0 +1,32 @@
+<div>
+<h3> Star Rating </h3>
+<div class="star-rating">
+<!-- Full Stars -->
+<span *ngFor="let star of getStarArray().fullStars; let i = index"
+      (click)="setRating(i)"
+      (mouseover)="setHoveredRating(i)"
+      (mouseleave)="resetHoveredRating()"
+      [class.hovered]="hoveredRating > i">
+  ★
+</span>
+
+<!-- Half Star -->
+<span *ngIf="getStarArray().halfStar">
+  ☆★
+</span>
+
+<!-- Empty Stars -->
+<span *ngFor="let star of getStarArray().emptyStars; let i = index"
+      (click)="setRating(getStarArray().fullStars.length + i)"
+      (mouseover)="setHoveredRating(getStarArray().fullStars.length + i)"
+      (mouseleave)="resetHoveredRating()"
+      [class.hovered]="hoveredRating > getStarArray().fullStars.length + i">
+  ☆
+</span>
+</div>
+
+<!-- Display the rating -->
+<p>Selected Rating: {{ rating }}/5</p>
+
+
+</div>

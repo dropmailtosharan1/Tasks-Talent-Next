@@ -1,0 +1,24 @@
+<div class="currency-converter-container">
+<h2>Currency Converter</h2>
+
+<div class="form-group">
+  <label for="usdAmount">Enter Amount in USD:</label>
+  <input
+    type="number"
+    id="usdAmount"
+    [(ngModel)]="usdAmount"
+    (input)="convertCurrency()"
+    class="form-control"
+    placeholder="Enter amount in USD"
+  />
+</div>
+
+<div class="result-group">
+  <p><strong>Converted Amounts:</strong></p>
+  <ul>
+    <li><strong>INR:</strong> ₹{{ convertedValues.INR | number: '1.2-2' }}</li>
+    <li><strong>EUR:</strong> €{{ convertedValues.EUR | number: '1.2-2' }}</li>
+    <li><strong>JPY:</strong> ¥{{ convertedValues.JPY | number: '1.2-2' }}</li>
+  </ul>
+</div>
+</div>
